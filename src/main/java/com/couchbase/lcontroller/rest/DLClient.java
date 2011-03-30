@@ -41,6 +41,15 @@ public class DLClient {
 		return response.getBody();
 	}
 	
+	public boolean getStatus() {
+		String url = "/cluster/get-status";
+		GetMessage message = new GetMessage(hostname, url);
+		CouchbaseResponse response = conn.sendRequest(message);
+		if (response.getBody().equals("Running"))
+			return true;
+		return false;
+	}
+	
 	public String start() {
 		String url = "/cluster/run";
 		GetMessage message = new GetMessage(hostname, url);
