@@ -1,0 +1,1 @@
+This is a rest client written in java for my distributes_loadgen project. I'll add a more comprehensive readme later.
